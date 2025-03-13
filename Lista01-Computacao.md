@@ -22,7 +22,9 @@ var x = 5;
 console.log(y);
 let y = 10;
 ```
+<span style="color:red">
 a) A saída será undefined seguido de erro 
+</span>
 
 b) A saída será 5 seguido de 10
 
