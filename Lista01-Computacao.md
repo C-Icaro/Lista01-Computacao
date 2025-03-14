@@ -23,7 +23,7 @@ console.log(y);
 let y = 10;
 ```
 
-a) A saída será undefined seguido de erro 
+a) A saída será undefined seguido de erro\ 
 R: Os valores de atribuição das variáveis estão após o seu chamamento, a saída será undefined para X por conta da variável global não estar definida, no entanto, será um erro para Y por conta de ser um variável local que só existe depois da sua inicialização (diferentemente da variável global).
 
 b) A saída será 5 seguido de 10
