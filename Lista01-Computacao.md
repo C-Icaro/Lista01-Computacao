@@ -22,9 +22,9 @@ var x = 5;
 console.log(y);
 let y = 10;
 ```
-<span style="color:red">
+
 a) A saída será undefined seguido de erro 
-</span>
+R: Os valores de atribuição das variáveis estão após o seu chamamento, a saída será undefined para X por conta da variável global não estar definida, no entanto, será um erro para Y por conta de ser um variável local que só existe depois da sua inicialização (diferentemente da variável global).
 
 b) A saída será 5 seguido de 10
 
@@ -46,6 +46,7 @@ console.log(soma(2, 0));
 ```
 
 a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
+R: O item a) é o mais correto, apesar do item d) também solucionar o problema, por conta de sua construção, entende-se que a função não aceita soma com zero, portanto, substituir a verificação do if por "a === 0 || b === 0" torna o código funcional e permite sua execução correta.
 
 b) Substituir if (a || b === 0) por if (a === 0 && b === 0)
 
@@ -81,6 +82,7 @@ console.log(calcularPreco("eletrônico"));
 a) O código imprime 1000.
 
 b) O código imprime 200.
+R: Por conta da falta de um "break;" no case "eletrônico" o algoritmo segue seu fluxo e a variável preço é redefinida no case "vestuário;", fazendo com que o código imprima 200 e não 1000 como esperado.
 
 c) O código imprime 50.
 
@@ -102,6 +104,11 @@ b) 6
 c) 18
 
 d) 24
+R: Explicação dos métodos:
+.map percorre todo o array ou lista e aplica uma função, no caso, multiplica todos os valores por 2;
+.filter filtra o lista de acordo com o parâmetro informado e cria um novo array ou lista com os valores verdadeiros, no caso numerosFiltrados = [6, 8, 10];
+.reduce reduz os itens de um vetor em um vetor único, aplicando o parâmetro de redução temos: Redução01 [14, 10], e redução02 [24].
+Portanto, o resultado final no console.log após a aplicação de todos os métodos é o número 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
@@ -116,6 +123,7 @@ a) ["banana", "maçã", "uva", "abacaxi", "manga", "laranja"]
 b) ["banana", "abacaxi", "manga"]
 
 c) ["banana", "abacaxi", "manga", "laranja"]
+R: O método .splice permite alterar o conteúdo de uma posição específica de um array, removendo ou substituindo elementos. No código, é informado para o método 2 posições (1 e 2) e os respectivos elementos a serem implementados nessas posições, portanto, "abacaxi" substituiu "maçã" na primeira posição e "manga" substituiu "uva" no segundo elemento.
 
 d) ["banana", "maçã", "uva", "abacaxi", "manga"]
 ______
@@ -126,6 +134,7 @@ II. Em JavaScript, a herança é implementada através da palavra-chave `extends
 
 
 a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+R: A primeira afirmação é o conceito de herança, a segunda afirmação explica a forma (mecanismo) de implementação herança, justificando assim a primeira.
 
 b) As duas afirmações são verdadeiras, mas a segunda não justifica a primeira.
 
@@ -161,13 +170,19 @@ class Funcionario extends Pessoa {
 ```
 
 
-I) A classe Funcionario herda de Pessoa e pode acessar os atributos nome e idade diretamente.  
-II) O método `apresentar()` da classe Funcionario sobrepõe o método `apresentar()` da classe Pessoa, mas chama o método da classe pai usando `super`.  
-III) O código não funciona corretamente, pois Funcionario não pode herdar de Pessoa como uma classe, já que o JavaScript não suporta herança de classes.
+I) A classe Funcionario herda de Pessoa e pode acessar os atributos nome e idade diretamente. --> Correta 
+II) O método `apresentar()` da classe Funcionario sobrepõe o método `apresentar()` da classe Pessoa, mas chama o método da classe pai usando `super`.  --> Correto
+III) O código não funciona corretamente, pois Funcionario não pode herdar de Pessoa como uma classe, já que o JavaScript não suporta herança de classes. --> Incorreto
 
 Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
 a) I e II são verdadeiras.
+R: As duas primeiras afirmativas estão corretas, isso se justifica com a adição de uma instância/objeto no código (informação de nome, idade e salário) e chamamento do método apresentar. Desse modo verificamos a saida:
+"
+Olá, meu nome é Carlos e tenho 30 anos.
+Meu salário é R$ 5000.
+"
+Sabendo que nome e idade são definidos na classe Pessoa e que as informações estão sendo apresentadas pela classe Funcionario, temos certeza de que a herança está corretamente implementada.
 
 b) I, II e III são verdadeiras.
 
@@ -185,6 +200,7 @@ ______
 a) A asserção é falsa e a razão é verdadeira.
 
 b) A asserção é verdadeira e a razão é falsa.
+R: O conceito de polimorfismo permite que um mesmo método possa realizar ações diferentes, permitindo que ela tenha comportamentos específicos. A razão é falsa pois os métodos em JS não podem ter sobrecarga, ou seja, vários comportamentos ao mesmo tempo (só pode ter um comportamento por vez). No caso, o polimorfismo é possivel por conta de sobrescrita de métodos, ou seja, reescrita do comportamento do método.
 
 c) A asserção é verdadeira e a razão é verdadeira, mas a razão não explica a asserção.
 
@@ -205,6 +221,20 @@ function somaArray(numeros) {
 }
 console.log(somaArray([1, 2, 3, 4]));
 ```
+R:
+```javascript
+function somaArray(numeros) {
+    let soma = 0;//Adição e definição da variável local 
+    console.log("Tamanho do array numeros:", numeros.length);//Adição de um console log para melhor visualização do código
+
+    for (i = 0; i < numeros.length; i++) {//Mudança de "numeros.size" para "numeros.length", dessa forma o comprimento do array é lido corretamente. 
+    // Anteriormente não funcionada por conta de "numeros.size" fazer o chamamento de uma função/método enquanto "numeros.length" faz o chamamento de uma propriedade
+        soma = soma + 2*numeros[i];//Substituição de "soma = 2*numeros[i]" por "soma = soma + 2*numeros[i]"
+    }
+    return soma;//Retorno da função
+}
+console.log("Valor da soma do dobro do array:", somaArray([1, 2, 3, 4]));//Console log para exibir o retorno da função 
+```
 ______
 10) Crie um exemplo prático no qual você tenha duas classes:
 
@@ -212,3 +242,41 @@ ______
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
+
+R:
+```javascript
+class Produto{//Classe pai 
+    constructor(nome, preço){//Constructor pai
+        this.nome = nome;//Definição de propriedades/atributos
+        this.preço = preço;
+    }
+
+    calcularDesconto(){//Método calcular desconto pai
+        this.preço = this.preço * 0.9;//Linha para calcular e aplicar o desconto
+        console.log(`Preço do livro com 10% de desconto R$ ${this.preço}.`);//Console log de visualização e controle
+    }
+}
+
+class Livro extends Produto{//Classe filha
+    constructor(nome, preço){//Constructor filho
+        super(nome, preço);
+    }
+
+    calcularDesconto(){//Método calcular desconto filho
+        this.preço = this.preço * 0.8;//Linha para calcular e aplicar o desconto
+        console.log(`Preço do livro com 20% de desconto R$ ${this.preço}.`);//Console log de visualização e controle
+    }
+}
+
+const L1984 = new Livro("1984", 100);//Criação de um objeto na classe filha
+L1984.calcularDesconto();//Chamamento do método calcular desconto filho
+
+/*
+Explicação:
+A classe Produto é criada e cria as propriedades nome e preço, além do método calcularDesconto(). A classe Livro extende a classe Produto e herda seus atributos e métodos. 
+A palavra chave super no classe Livro chama o constructor da classe pai e solicita acesso aos atributos elencados (herança).
+A modificação do método ocorre por sobrescrita de método, ou seja, estamos criando um método igual mas com comportamento diferente, estamos aplicando o polimorfismo.
+Podemos ter certeza que a sobrescrita é responsável pela modificação do método quando retiramos essa modificação da classe Livro. Sem nenhuma sobrescrita é chamado o método pai
+presente na classe Produto, tendo como retorno no console log o valor R$90 (referente à 10% do valor do produto).
+*/
+```
