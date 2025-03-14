@@ -23,7 +23,7 @@ console.log(y);
 let y = 10;
 ```
 
-a) A saída será undefined seguido de erro 
+**a) A saída será undefined seguido de erro**
 
 R: Os valores de atribuição das variáveis estão após o seu chamamento, a saída será undefined para X por conta da variável global não estar definida, no entanto, será um erro para Y por conta de ser um variável local que só existe depois da sua inicialização (diferentemente da variável global).
 
@@ -46,7 +46,7 @@ function soma(a, b) {
 console.log(soma(2, 0));
 ```
 
-a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
+**a) Substituir if (a || b === 0) por if (a === 0 || b === 0)**
 
 R: O item a) é o mais correto, apesar do item d) também solucionar o problema, por conta de sua construção, entende-se que a função não aceita soma com zero, portanto, substituir a verificação do if por "a === 0 || b === 0" torna o código funcional e permite sua execução correta.
 
@@ -83,7 +83,8 @@ console.log(calcularPreco("eletrônico"));
 
 a) O código imprime 1000.
 
-b) O código imprime 200.
+**b) O código imprime 200.**
+
 R: Por conta da falta de um "break;" no case "eletrônico" o algoritmo segue seu fluxo e a variável preço é redefinida no case "vestuário;", fazendo com que o código imprima 200 e não 1000 como esperado.
 
 c) O código imprime 50.
@@ -105,7 +106,8 @@ b) 6
 
 c) 18
 
-d) 24
+**d) 24**
+
 R: Explicação dos métodos:
 .map percorre todo o array ou lista e aplica uma função, no caso, multiplica todos os valores por 2;
 .filter filtra o lista de acordo com o parâmetro informado e cria um novo array ou lista com os valores verdadeiros, no caso numerosFiltrados = [6, 8, 10];
@@ -124,7 +126,8 @@ a) ["banana", "maçã", "uva", "abacaxi", "manga", "laranja"]
 
 b) ["banana", "abacaxi", "manga"]
 
-c) ["banana", "abacaxi", "manga", "laranja"]
+**c) ["banana", "abacaxi", "manga", "laranja"]**
+
 R: O método .splice permite alterar o conteúdo de uma posição específica de um array, removendo ou substituindo elementos. No código, é informado para o método 2 posições (1 e 2) e os respectivos elementos a serem implementados nessas posições, portanto, "abacaxi" substituiu "maçã" na primeira posição e "manga" substituiu "uva" no segundo elemento.
 
 d) ["banana", "maçã", "uva", "abacaxi", "manga"]
@@ -135,7 +138,8 @@ I. A herança é utilizada para compartilhar métodos e propriedades entre class
 II. Em JavaScript, a herança é implementada através da palavra-chave `extends`.
 
 
-a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+**a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.**
+
 R: A primeira afirmação é o conceito de herança, a segunda afirmação explica a forma (mecanismo) de implementação herança, justificando assim a primeira.
 
 b) As duas afirmações são verdadeiras, mas a segunda não justifica a primeira.
@@ -178,7 +182,8 @@ III) O código não funciona corretamente, pois Funcionario não pode herdar de 
 
 Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
-a) I e II são verdadeiras.
+**a) I e II são verdadeiras.**
+
 R: As duas primeiras afirmativas estão corretas, isso se justifica com a adição de uma instância/objeto no código (informação de nome, idade e salário) e chamamento do método apresentar. Desse modo verificamos a saida:
 "
 Olá, meu nome é Carlos e tenho 30 anos.
@@ -201,7 +206,8 @@ ______
 
 a) A asserção é falsa e a razão é verdadeira.
 
-b) A asserção é verdadeira e a razão é falsa.
+**b) A asserção é verdadeira e a razão é falsa.**
+
 R: O conceito de polimorfismo permite que um mesmo método possa realizar ações diferentes, permitindo que ela tenha comportamentos específicos. A razão é falsa pois os métodos em JS não podem ter sobrecarga, ou seja, vários comportamentos ao mesmo tempo (só pode ter um comportamento por vez). No caso, o polimorfismo é possivel por conta de sobrescrita de métodos, ou seja, reescrita do comportamento do método.
 
 c) A asserção é verdadeira e a razão é verdadeira, mas a razão não explica a asserção.
@@ -223,6 +229,7 @@ function somaArray(numeros) {
 }
 console.log(somaArray([1, 2, 3, 4]));
 ```
+
 R:
 ```javascript
 function somaArray(numeros) {
